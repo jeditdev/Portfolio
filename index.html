@@ -29,16 +29,16 @@
     <!-- HEADER SECTION DESIGN -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hi, Myself</h3>
+            <h3>Hi, I'm</h3>
             <h1>John Erwin</h1>
-            <h3 >And I'm a <span>FUCKING DEVELOPER</span></h3>
+            <h3 >And I'm a <span>CUTE</span></h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Amet consectetur adipiscing elit ut aliquam. </p>
             <div class="social-media">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.facebook.com/jhnrwndmn/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/erwin_jdi" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/jeditdev" target="_blank"><i class="fa-brands fa-github"></i></a>
 
             </div>
             <a href="#" class="btn">Download CV</a>
@@ -60,7 +60,7 @@
             <h2 class="heading">About <span>ME</span></h2>
             <h3>WEB DEVELOPER</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Amet consectetur adipiscing elit ut aliquam. </p>
-            <a href="#" class="btn">Read more.</a>
+            <a href="aboutme.html" class="btn">Read more.</a>
         </div>
     </section>
 
@@ -156,19 +156,20 @@
 
     <!-- CONTACT SECTION DESIGN -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>ME</span></h2>
+        <h2 class="heading">Get in <span>TOUCH</span></h2>
 
-        <form action="#">
+        <form action="https://api.web3forms.com/submit" method="POST">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email" name="" id="">
+                <input type="hidden" name="access_key" value="f9a24299-e1a1-4cf0-8f1e-51adf92b0fae">
+                <input type="text" placeholder="Full Name" name="name" class="contact-inputs" required>
+                <input type="email" placeholder="Email" name="email" class="contact-inputs" required id="">
             </div>
 
             <div class="input-box">
                 <input type="number" placeholder="Mobile Number">
                 <input type="text" placeholder="Email Subject">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" class="contact-inputs" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
