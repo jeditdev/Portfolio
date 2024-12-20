@@ -10,7 +10,7 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Nunito', Sans-serif;
-}
+}   
 
 :root {
     --bg-color: #191f36;
@@ -130,7 +130,7 @@ span {
 
 .home-content .typewriter span{
     font-size: 2.5rem;
-    text-shadow: 0 0 5px rgb(109,67, 0);
+    text-shadow: 0 0 5px rgb(0, 0, 0);
     position: relative;
     transition: 0.3s linear;
 }
@@ -163,7 +163,7 @@ span {
         content: "UI/UX Designer";
     }
     67%, 100%{
-        content: "Mobile Game Developer";
+        content: "Game Developer";
     }
 }
 
