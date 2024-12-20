@@ -45,22 +45,16 @@ ScrollReveal().reveal('.home-contact p, .about-content', { origin: 'right'});
 
 
 
-// Function to handle the download of the CV
+
 function downloadCV() {
-    // The relative path to the CV file in your folder
-    const cvPath = 'assets/cv/Dimaano (Resume).pdf';  // Make sure this path is correct
-    
-    // Create a temporary link element
+    const cvPath = 'Dimaano.pdf';
     const link = document.createElement('a');
-    link.href = cvPath;  // Relative path to the CV file
-    link.download = 'Dimaano (Resume).pdf';  // The name of the downloaded file
-    
-    // Programmatically click the link to trigger the download
+    link.href = cvPath;
+    link.download = 'Dimaano.pdf';
     link.click();
 }
 
-// Event listener for the "Download CV" button
 document.getElementById('downloadCV').addEventListener('click', function(e) {
-    e.preventDefault();  // Prevent default behavior (e.g., navigating to the link)
-    downloadCV();  // Call the function to trigger the download
+    e.preventDefault();
+    downloadCV();
 });
