@@ -1,11 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Portfolio</title>
+  <link rel="shortcut icon" href="img/JD.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-color: #081b29;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00abf0;
+      margin-bottom: 0.5rem;
+    }
+
+    .underline {
+      width: 80px;
+      height: 3px;
+      background-color: #00abf0;
+      margin-bottom: 2rem;
+    }
+
+    .icon-block {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .icon-block i {
+      color: #00abf0;
+      transition: transform 0.3s;
+    }
+
+    .icon-block i:hover {
+      transform: scale(1.2);
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .dots {
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      color: #00abf0;
+      letter-spacing: 10px;
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #00abf0;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #007bb5;
+    }
+  </style>
 </head>
 <body>
-    <p>TANGINAMO</p>
+
+  <h1>More About Me</h1>
+  <div class="underline"></div>
+
+  <div class="icon-block">
+    <i class="fas fa-code"></i>
+    <i class="fas fa-lightbulb"></i>
+    <i class="fas fa-gamepad"></i>
+    <i class="fas fa-user-astronaut"></i>
+  </div>
+
+  <p>
+    I'm a front-end developer and mobile game creator with a passion for crafting clean, user-centered experiences.
+    My work blends creativity and code, and I enjoy turning complex ideas into simple, elegant interfaces.
+  </p>
+
+  <div class="dots">•••</div>
+
+  <p>
+    I began my journey with small interactive projects, and over time, I’ve grown into building full websites and functional game mechanics.
+    I love experimenting with animations, transitions, and UI that feels smooth and engaging.
+  </p>
+
+  <p>
+    When I’m not coding, you’ll find me exploring design trends, learning new technologies, and working on side projects to sharpen my skills.
+    I’m always eager to grow and create something impactful.
+  </p>
+
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
 </body>
 </html>

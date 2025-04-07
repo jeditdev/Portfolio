@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Services - Portfolio</title>
+  <link rel="shortcut icon" href="img/JD.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+      background-color: #081b29;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00abf0;
+      margin-bottom: 1rem;
+    }
+
+    .underline {
+      width: 80px;
+      height: 3px;
+      background-color: #00abf0;
+      margin: 1rem auto;
+    }
+
+    .service-section {
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .service-section h2 {
+      font-size: 2.5rem;
+      color: #00abf0;
+      margin-bottom: 1rem;
+    }
+
+    .service-card {
+      background-color: #0a253a;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+      box-shadow: 0 0 15px rgba(0, 171, 240, 0.5);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: #00abf0;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 2rem;
+      color: #00abf0;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card ul {
+      list-style-type: none;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      padding-left: 0;
+      color: white;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 0.8rem 1.5rem;
+      background-color: #00abf0;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .back-btn:hover {
+      background-color: #007bb5;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .service-section h2 {
+        font-size: 2rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+
+      .service-card i {
+        font-size: 2.5rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.8rem;
+      }
+
+      .service-card p {
+        font-size: 1.1rem;
+      }
+
+      .service-card ul {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .service-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .service-card {
+        padding: 1rem;
+      }
+
+      .service-card i {
+        font-size: 2rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.6rem;
+      }
+
+      .service-card p {
+        font-size: 1rem;
+      }
+
+      .service-card ul {
+        font-size: 1rem;
+      }
+
+      /* Stack service sections on smaller devices */
+      .service-section {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .back-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .service-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .service-card {
+        padding: 1rem;
+      }
+
+      .service-card i {
+        font-size: 1.8rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+      }
+
+      .service-card p {
+        font-size: 0.9rem;
+      }
+
+      .service-card ul {
+        font-size: 0.9rem;
+      }
+
+      .back-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
+  <h1>My Services</h1>
+  <div class="underline"></div>
+
+  <!-- Web Development Service Section -->
+  <div class="service-section">
+    <h2>Web Development</h2>
+    <div class="service-card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Custom Web Solutions</h3>
+      <p>
+        I specialize in creating responsive, scalable, and high-performance websites using modern technologies like HTML5, CSS3, and JavaScript. Whether you need a simple landing page or a complex web application, I am here to help you bring your ideas to life.
+      </p>
+      <p>
+        <strong>Technologies I use:</strong>
+      </p>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3 (with Flexbox and Grid)</li>
+        <li>JavaScript (Vanilla and Frameworks like React)</li>
+        <li>Responsive Design</li>
+        <li>Web Accessibility</li>
+      </ul>
+      <p>
+        Every project is built with the user in mind, ensuring fast load times, a smooth user experience, and robust code that will stand the test of time.
+      </p>
+    </div>
+  </div>
+
+  <!-- Game Development Service Section -->
+  <div class="service-section">
+    <h2>Game Development</h2>
+    <div class="service-card">
+      <i class="fas fa-gamepad"></i>
+      <h3>Fun & Interactive Games</h3>
+      <p>
+        I create fun, interactive, and high-performance games for mobile and desktop platforms. From puzzle games to action-packed adventures, my goal is to provide an immersive experience for players of all ages.
+      </p>
+      <p>
+        <strong>Technologies I use:</strong>
+      </p>
+      <ul>
+        <li>Unity</li>
+        <li>Unreal Engine</li>
+        <li>C# and C++</li>
+        <li>2D and 3D Game Design</li>
+        <li>Game Mechanics and Gameplay Balance</li>
+      </ul>
+      <p>
+        Each game is designed to be engaging and fun, providing players with exciting challenges and rewarding experiences.
+      </p>
+    </div>
+  </div>
+
+  <!-- UI/UX Design Service Section -->
+  <div class="service-section">
+    <h2>UI/UX Design</h2>
+    <div class="service-card">
+      <i class="fas fa-paint-brush"></i>
+      <h3>User-Centered Design</h3>
+      <p>
+        I focus on creating seamless and beautiful user interfaces that offer an enjoyable user experience across all platforms. From website designs to mobile apps, I ensure each design is intuitive and user-friendly.
+      </p>
+      <p>
+        <strong>What I design:</strong>
+      </p>
+      <ul>
+        <li>Responsive Websites</li>
+        <li>Mobile Apps</li>
+        <li>Prototypes & Wireframes</li>
+        <li>Design Systems</li>
+        <li>Branding and Visual Identity</li>
+      </ul>
+      <p>
+        My design process starts with understanding the user's needs and behaviors to create an interface that not only looks good but also works flawlessly.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
