@@ -1,0 +1,614 @@
+/* ==========================================================================
+   styles.css  |  John Erwin Dimaano portfolio
+
+   HOW TO EDIT
+   - Change colors and fonts in section 1 (DESIGN TOKENS) only.
+   - Rules are grouped by page section; use Ctrl+F to find a class name from index.html.
+   - Do not add inline style="" attributes in index.html. The Content Security
+     Policy blocks them, so put new styles in this file instead.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   Colors, fonts and other values used across the site.
+   Change a value here and the whole page updates.
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;  /* dark theme: affects scrollbars and form controls */
+  --bg: #0b1220;  /* page background */
+  --bg2: #101a2d;  /* alternate section background */
+  --card: #131f35;  /* card background */
+  --line: #22314d;  /* borders and dividers */
+  --text: #eef3fb;  /* main text */
+  --muted: #a3b3cc;  /* secondary text */
+  --accent: #38d0ee;  /* highlight color: buttons, links, dates */
+  --ink: #04222b;  /* text color on top of the accent color */
+  --font: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;  /* body font (system fonts, so nothing to download) */
+  --mono: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;  /* code-style font */
+  box-sizing: border-box;  /* padding and border count inside an element width */
+  padding-top: env(safe-area-inset-top,0px);  /* keeps content clear of phone notches */
+  padding-bottom: env(safe-area-inset-bottom,0px);  /* keeps content clear of phone home bars */
+}
+
+/* ==========================================================================
+   2. BASE STYLES
+   Defaults for the whole page: text, headings, links, the keyboard focus
+   outline, and the centered content width (.wrap).
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Smooth scrolling. scroll-padding-top stops the fixed header covering a section title after a nav click. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* clamp(min, preferred, max) lets the font size grow slightly on bigger screens. */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 clamp(1rem,.95rem + .25vw,1.125rem)/1.65 var(--font);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+h2 {
+  font-size: clamp(1.6rem,1.2rem + 2vw,2.25rem);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 68ch;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Centers content: at most 1040px wide, with 1rem of space at the edges on small screens. */
+.wrap {
+  width: min(1040px,100% - 2rem);
+  margin-inline: auto;
+}
+
+/* Space above and below every section. It shrinks automatically on phones. */
+section {
+  padding: clamp(3.5rem,8vw,6rem) 0;
+}
+
+/* Slightly lighter background used by alternating sections (About, Projects, Contact). */
+.alt {
+  background: var(--bg2);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Hidden "Skip to content" link for keyboard users; appears when focused. */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--ink);
+  padding: .6rem 1rem;
+  z-index: 100;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ==========================================================================
+   3. BUTTONS
+   Use class "btn" for an outlined button, "btn primary" for the filled cyan one.
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .65rem 1.25rem;
+  border-radius: 10px;
+  font: 500 1rem var(--font);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background .15s,border-color .15s;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+/* Filled cyan button. */
+.btn.primary {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.btn.primary:hover {
+  background: #6fe0f6;
+}
+
+/* Makes the HTML "hidden" attribute always win (used by the resume button). */
+[hidden] {
+  display: none!important;
+}
+
+/* ==========================================================================
+   4. HEADER AND NAVIGATION
+   Fixed top bar. Under 900px wide the links collapse into a hamburger menu.
+   ========================================================================== */
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding-top: env(safe-area-inset-top,0px);
+  background: rgba(11,18,32,.95);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo b {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+  gap: .2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav a.link {
+  display: block;
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+nav a.link:hover,
+nav a.link.on {
+  color: var(--text);
+  background: rgba(56,208,238,.1);
+}
+
+/* Hamburger button: hidden on desktop, shown on screens under 900px. */
+.menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  place-items: center;
+}
+
+.menu svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Tablets and phones: show the hamburger menu. */
+@media (max-width: 900px) {
+  .menu {
+    display: grid;
+  }
+
+  nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--line);
+    display: none;
+    padding: .5rem 1rem 1rem;
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav a.link {
+    padding: .85rem .75rem;
+  }
+
+  nav .btn {
+    margin-top: .5rem;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   5. HERO (first section)
+   Greeting, headline, intro text and the two buttons.
+   ========================================================================== */
+
+.hero {
+  padding-top: clamp(7rem,16vw,10rem);
+  padding-bottom: clamp(3rem,8vw,5rem);
+}
+
+.hello {
+  color: var(--accent);
+  font-family: var(--mono);
+  margin-bottom: .75rem;
+}
+
+/* Main headline. It scales smoothly between phone and desktop sizes. */
+.hero h1 {
+  font-size: clamp(2.2rem,1.2rem + 5vw,4rem);
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.2em;
+  margin-bottom: .75rem;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 1.5rem 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links a {
+  color: var(--muted);
+  text-underline-offset: 4px;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+/* Small phones: make hero buttons full width. */
+@media (max-width: 480px) {
+  .cta .btn {
+    flex: 1 1 100%;
+  }
+}
+
+/* ==========================================================================
+   6. CONTENT BLOCKS
+   Responsive grid plus the cards, skill chips and the empty Projects box.
+   ========================================================================== */
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr));
+}
+
+/* Reusable box used for skills, About, Education and Certifications. */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+
+.card h3 {
+  margin-bottom: .9rem;
+}
+
+/* Rounded skill tags. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chips li {
+  padding: .25rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .92rem;
+}
+
+.facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .6rem;
+}
+
+.facts span {
+  color: var(--muted);
+}
+
+/* Dashed box shown in Projects until you add real projects. */
+.empty {
+  border: 1px dashed #34496d;
+  border-radius: 12px;
+  padding: 2rem 1.4rem;
+  text-align: left;
+}
+
+.empty h3 {
+  margin-bottom: .5rem;
+}
+
+.empty p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   7. EXPERIENCE TIMELINE
+   Each job is an <article class="job"> in index.html.
+   ========================================================================== */
+
+.job {
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.job:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* Job title on the left, dates on the right. They stack on narrow screens. */
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .25rem 1rem;
+  align-items: baseline;
+}
+
+/* Cyan monospace text used for dates. */
+.date {
+  color: var(--accent);
+  font: 400 .9rem var(--mono);
+}
+
+.org {
+  color: var(--muted);
+  margin: .2rem 0 .8rem;
+}
+
+.job ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+}
+
+.job li {
+  margin-bottom: .5rem;
+  overflow-wrap: anywhere;
+}
+
+.sub {
+  margin-top: 3.5rem;
+}
+
+/* ==========================================================================
+   8. CONTACT SECTION
+   Two columns on desktop, one column under 820px.
+   ========================================================================== */
+
+.cgrid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+/* Stack the contact section into one column. */
+@media (max-width: 820px) {
+  .cgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Email, LinkedIn and GitHub link boxes. */
+.clinks {
+  display: grid;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.clinks a {
+  padding: .85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.clinks a:hover {
+  border-color: var(--accent);
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: .35rem;
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+input,
+textarea {
+  font: 400 1rem var(--font);
+  color: var(--text);
+  background: #0a1322;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .75rem .9rem;
+  width: 100%;
+  min-height: 44px;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Red border on a form field that failed validation. */
+[aria-invalid="true"] {
+  border-color: #ff8a8a;
+}
+
+.err {
+  color: #ff9d9d;
+  font-size: .88rem;
+  font-weight: 400;
+  min-height: 1.1em;
+}
+
+#status {
+  min-height: 1.5em;
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0;
+  color: var(--muted);
+}
+
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   10. ACCESSIBILITY
+   Turns off animation for people whose device asks for less motion.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none!important;
+  }
+}
+
+/* ==========================================================================
+   11. SMALL HELPER CLASSES
+   Tiny one-purpose classes (these replace inline style="" attributes).
+   ========================================================================== */
+
+.about-grid {
+  grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr));
+  gap: 2rem;
+}
+
+.mt {
+  margin: 1rem 0 0;
+}
+
+.flush {
+  margin: 0;
+}
+
+.submit {
+  justify-self: start;
+}
+
+footer strong {
+  color: var(--text);
+}
