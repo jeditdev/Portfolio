@@ -7,7 +7,8 @@
    3. Shows the Download resume button (only when a resume link is set)
    4. Opens and closes the mobile menu
    5. Highlights the nav link of the section you are viewing
-   6. Validates the contact form and opens the visitor's email app
+   6. Fades cards in as you scroll (scroll reveal)
+   7. Validates the contact form and opens the visitor's email app
 
    Notes for editing:
    - Do not add inline <script> blocks to index.html; the Content Security
@@ -111,7 +112,36 @@ if ("IntersectionObserver" in window) {
 
 
 /* --------------------------------------------------------------------------
-   6. CONTACT FORM
+   6. SCROLL REVEAL
+   Adds a gentle fade-in to cards and timeline items. The class "js" on <html>
+   tells the CSS that scripts are running, so nothing stays hidden if this file
+   fails to load. To change what animates, edit the selector list below.
+   -------------------------------------------------------------------------- */
+
+document.documentElement.classList.add("js");
+
+const revealItems = document.querySelectorAll(".card, .job, .stats li, .empty, .code-card");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in");        // fade in
+        revealObserver.unobserve(entry.target);  // only animate once
+      });
+    },
+    { threshold: 0.12 }
+  );
+  revealItems.forEach((item) => {
+    item.classList.add("reveal");
+    revealObserver.observe(item);
+  });
+}
+
+
+/* --------------------------------------------------------------------------
+   7. CONTACT FORM
    There is no server. After validation, the visitor's own email app opens
    with the message filled in. Nothing is sent until they press Send there,
    and the status text says so honestly.

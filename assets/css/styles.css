@@ -612,3 +612,163 @@ footer p {
 footer strong {
   color: var(--text);
 }
+
+/* ==========================================================================
+   12. VISUAL POLISH
+   Extra design layered on top of the basics. Each block says what it does.
+   Delete a block to remove that effect; nothing else depends on it.
+   ========================================================================== */
+
+/* Hero: soft cyan and blue glows behind the text */
+.hero {
+  background:
+    radial-gradient(700px 380px at 85% 0%, rgba(56, 208, 238, 0.14), transparent 70%),
+    radial-gradient(520px 320px at 0% 45%, rgba(122, 162, 255, 0.09), transparent 70%);
+}
+
+/* Hero layout: text on the left, code window on the right (one column on tablets and phones) */
+.hero .wrap { max-width: none; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem 2.5rem;
+  align-items: center;
+}
+.hero-text { min-width: 0; }
+
+/* Gradient text used on ".NET" in the headline */
+.grad {
+  background: linear-gradient(90deg, var(--accent), #7aa2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Code window (decorative) */
+.code-card {
+  background: #09101d;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  min-width: 0;
+}
+.code-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.code-top span { width: 10px; height: 10px; border-radius: 50%; background: #2a3b5c; }
+.code-top em { margin-left: 0.5rem; font: 400 0.8rem var(--mono); color: var(--muted); }
+.code-card pre {
+  margin: 0;
+  padding: 1.1rem;
+  overflow-x: auto;              /* long lines scroll instead of breaking the page */
+  font: 400 0.85rem/1.7 var(--mono);
+  color: #cfe0f7;
+}
+.code-card .k { color: #7aa2f7; }   /* keywords */
+.code-card .t { color: var(--accent); }   /* type names */
+.code-card .s { color: #9ece6a; }   /* strings */
+.code-card .c { color: #5f7396; }   /* comments */
+
+/* Quick-facts strip under the hero (spans both hero columns) */
+.stats {
+  grid-column: 1 / -1;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+}
+.stats li {
+  background: rgba(19, 31, 53, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+.stats strong { display: block; font-size: 1.5rem; color: var(--accent); }
+.stats span { color: var(--muted); font-size: 0.92rem; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+/* Section headings: short gradient bar underneath */
+h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.6rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), #7aa2ff);
+}
+
+/* Cards: small accent tab on top, soft glow on hover */
+.card {
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 1.4rem;
+  width: 44px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: var(--accent);
+}
+.card:hover {
+  border-color: rgba(56, 208, 238, 0.55);
+  box-shadow: 0 14px 34px -14px rgba(56, 208, 238, 0.3);
+}
+
+/* Experience: vertical timeline line with a dot for each job */
+.timeline {
+  margin-left: 0.4rem;
+  padding-left: 1.75rem;
+  border-left: 2px solid var(--line);
+}
+.job { position: relative; }
+.job::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 7px);
+  top: 1.85rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.job:first-of-type::before { top: 0.45rem; }
+
+/* Contact: glow behind the section and the form shown as a card */
+#contact.alt {
+  background:
+    radial-gradient(620px 320px at 10% 15%, rgba(56, 208, 238, 0.12), transparent 70%),
+    var(--bg2);
+}
+form {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+/* Scroll reveal: items fade in as you scroll (main.js adds the classes).
+   The "js" class means visitors without JavaScript still see everything. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s, box-shadow 0.2s;
+}
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}

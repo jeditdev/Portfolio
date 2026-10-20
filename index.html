@@ -36,9 +36,10 @@
 
 <main id="main">
 <section class="hero" id="home">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
     <p class="hello">Hi, I’m John Erwin Dimaano.</p>
-    <h1>Full-Stack .NET Developer</h1>
+    <h1>Full-Stack <span class="grad">.NET</span> Developer</h1>
     <p class="lead">Building reliable, scalable, and user-focused digital solutions.</p>
     <p class="muted">I build and maintain web applications, .NET Core APIs and SSRS reports for enterprise environments, with a focus on SQL Server databases and solving problems at the root.</p>
     <div class="cta">
@@ -48,6 +49,29 @@
     <ul class="links">
       <li><a href="https://github.com/jeditdev" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/jedimaano/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+    </div>
+
+    <!-- Decorative code window (hidden from screen readers). Edit the text freely. -->
+    <div class="code-card" aria-hidden="true">
+      <div class="code-top"><span></span><span></span><span></span><em>ReportsController.cs</em></div>
+<pre><code><span class="c">// A .NET Core API endpoint</span>
+<span class="k">[ApiController]</span>
+<span class="k">[Route(</span><span class="s">"api/reports"</span><span class="k">)]</span>
+<span class="k">public class</span> <span class="t">ReportsController</span>
+{
+    <span class="k">[HttpGet]</span>
+    <span class="k">public</span> IActionResult Get()
+        =&gt; Ok(_service.GetAll());
+}</code></pre>
+    </div>
+
+    <!-- Quick facts, all taken from my CV -->
+    <ul class="stats">
+      <li><strong>3 years</strong><span>building web apps and APIs</span></li>
+      <li><strong>.NET Core</strong><span>APIs, MVC and SQL Server</span></li>
+      <li><strong>SSRS</strong><span>reports for business users</span></li>
+      <li><strong>95%</strong><span>first-contact resolution in IT support</span></li>
     </ul>
   </div>
 </section>
@@ -110,6 +134,7 @@
   <div class="wrap">
     <h2>Experience</h2>
 
+    <div class="timeline">
     <article class="job">
       <div class="head"><h3>IT - Web Developer</h3><span class="date">Oct 2023 – Present</span></div>
       <p class="org">Automated Technology (Phil.) Inc. | LISP1 SEPZ, Cabuyao, Laguna</p>
@@ -133,6 +158,7 @@
         <li>Performed system diagnostics and troubleshooting for software and hardware issues, achieving a 95% first-contact resolution rate.</li>
       </ul>
     </article>
+    </div>
 
     <h2 class="sub">Education and certifications</h2>
     <div class="grid">
