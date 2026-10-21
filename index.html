@@ -6,6 +6,14 @@
 <title>John Erwin Dimaano | Full-Stack .NET Developer</title>
 <meta name="description" content="John Erwin Dimaano is a Full-Stack .NET Developer in Batangas, Philippines, building web applications, .NET Core APIs and SSRS reports with C#, ASP.NET and SQL Server.">
 <meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:title" content="John Erwin Dimaano | Full-Stack .NET Developer">
+<meta property="og:description" content="I build and fix .NET Core APIs, web apps and SQL Server reports for business teams.">
+<!-- SHARE IMAGE (LinkedIn, Messenger, X): after you deploy, replace YOUR-DOMAIN with your real address
+     and delete the comment markers around the two lines below.
+<meta property="og:image" content="https://YOUR-DOMAIN/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+-->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -38,39 +46,27 @@
 <section class="hero" id="home">
   <div class="wrap hero-grid">
     <div class="hero-text">
-    <p class="hello">Hi, I’m John Erwin Dimaano.</p>
-    <h1>Full-Stack <span class="grad">.NET</span> Developer</h1>
-    <p class="lead">Building reliable, scalable, and user-focused digital solutions.</p>
-    <p class="muted">I build and maintain web applications, .NET Core APIs and SSRS reports for enterprise environments, with a focus on SQL Server databases and solving problems at the root.</p>
-    <div class="cta">
-      <a class="btn primary" href="#projects">Explore my projects</a>
-      <a class="btn" href="#contact">Contact me</a>
-    </div>
-    <ul class="links">
-      <li><a href="https://github.com/jeditdev" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/jedimaano/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-    </ul>
+      <p class="hello">Hi, I’m John Erwin Dimaano.</p>
+      <h1>Full-Stack <span class="grad">.NET</span> Developer</h1>
+      <p class="lead">I build and fix .NET Core APIs, web apps and SQL Server reports for business teams.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Contact me</a>
+        <a class="btn resume-btn" href="#" hidden>Download resume</a>
+      </div>
+      <ul class="links">
+        <li><a href="https://github.com/jeditdev" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jedimaano/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
     </div>
 
-    <!-- Decorative code window (hidden from screen readers). Edit the text freely. -->
-    <div class="code-card" aria-hidden="true">
-      <div class="code-top"><span></span><span></span><span></span><em>ReportsController.cs</em></div>
-<pre><code><span class="c">// A .NET Core API endpoint</span>
-<span class="k">[ApiController]</span>
-<span class="k">[Route(</span><span class="s">"api/reports"</span><span class="k">)]</span>
-<span class="k">public class</span> <span class="t">ReportsController</span>
-{
-    <span class="k">[HttpGet]</span>
-    <span class="k">public</span> IActionResult Get()
-        =&gt; Ok(_service.GetAll());
-}</code></pre>
-    </div>
+    <figure class="portrait">
+      <img src="assets/img/john-erwin-dimaano.jpg" alt="Portrait of John Erwin Dimaano" width="800" height="1000" fetchpriority="high">
+    </figure>
 
     <!-- Quick facts, all taken from my CV -->
     <ul class="stats">
       <li><strong>3 years</strong><span>building web apps and APIs</span></li>
-      <li><strong>.NET Core</strong><span>APIs, MVC and SQL Server</span></li>
-      <li><strong>SSRS</strong><span>reports for business users</span></li>
       <li><strong>95%</strong><span>first-contact resolution in IT support</span></li>
     </ul>
   </div>
@@ -87,17 +83,56 @@
       <div class="card">
         <h3>At a glance</h3>
         <ul class="facts">
-          <li><span>Location</span><br>Tanauan City, Batangas, Philippines</li>
+          <li><span>Location</span><br>Batangas, Philippines</li>
           <li><span>Experience</span><br>3 years</li>
           <li><span>Education</span><br>BS Information Technology, STI College Tanauan</li>
           <li><span>Languages</span><br>English, Tagalog</li>
+          <!-- CURRENTLY LEARNING: write one honest sentence, then delete the word hidden on the next line. -->
+          <li hidden><span>Currently learning</span><br>WRITE WHAT YOU ARE LEARNING HERE</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="muted">Here is what I can help with.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Web applications</h3>
+        <p class="muted">Business web apps built with ASP.NET MVC, .NET Core and VB.NET, with responsive interfaces in HTML, CSS, JavaScript, jQuery and Bootstrap.</p>
+      </article>
+      <article class="card">
+        <h3>.NET Core APIs</h3>
+        <p class="muted">APIs built on .NET Core with Entity Framework and LINQ for data access, documented with Swagger.</p>
+      </article>
+      <article class="card">
+        <h3>Databases and reports</h3>
+        <p class="muted">SQL Server and MySQL queries, stored procedures, and SSRS reports for business users.</p>
+      </article>
+      <article class="card">
+        <h3>Debugging and root-cause analysis</h3>
+        <p class="muted">Finding and fixing defects in existing systems, including report queries and API endpoints, to improve stability.</p>
+      </article>
+      <article class="card">
+        <h3>ERP support</h3>
+        <p class="muted">Troubleshooting and root-cause analysis for SAP Business One and MS Dynamics AX 2012.</p>
+      </article>
+    </div>
+
+    <h2 class="sub">How I work</h2>
+    <ol class="steps">
+      <li><strong>Understand the problem</strong><span>I clarify what the business or the user needs before I write any code.</span></li>
+      <li><strong>Build</strong><span>I build in clear, maintainable pieces, with a clean data layer and a responsive interface.</span></li>
+      <li><strong>Test and debug</strong><span>I trace issues to the root cause instead of patching symptoms.</span></li>
+      <li><strong>Document</strong><span>I write technical guides and Swagger docs so the team can maintain the work.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt" id="skills">
   <div class="wrap">
     <h2>Technical skills</h2>
     <div class="grid">
@@ -111,7 +146,7 @@
   </div>
 </section>
 
-<section class="alt" id="projects">
+<section id="projects">
   <div class="wrap">
     <h2>Projects</h2>
     <div class="empty">
@@ -119,18 +154,42 @@
       <p>I’m preparing case studies of my work. In the meantime, you can browse my code on <a href="https://github.com/jeditdev" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
     </div>
     <!--
-      To add a project, copy this block and place it above the "empty" block, then delete the "empty" block:
-      <article class="card">
-        <h3>Project name</h3>
-        <p class="muted">Short description, the problem it solved, and key features.</p>
-        <ul class="chips"><li>C#</li><li>SQL Server</li></ul>
-        <p class="mt"><a href="https://github.com/jeditdev/REPO" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-      </article>
+      HOW TO ADD A PROJECT
+      1. Copy everything between the two lines marked COPY below.
+      2. Paste it directly above the <div class="empty"> box.
+      3. Replace the sample words. Delete a line you do not need (for example the Live demo button or the screenshot).
+      4. When you have added your projects, delete the whole <div class="empty"> box.
+      Add more projects by pasting more cards inside the same projects-grid div.
+
+      ===== COPY FROM HERE =====
+      <div class="projects-grid">
+        <article class="card project">
+          <div class="shot">
+            <img src="assets/img/projects/project-name.png" alt="Screenshot of PROJECT NAME" width="1200" height="675" loading="lazy">
+          </div>
+          <h3>PROJECT NAME</h3>
+          <p class="tagline muted">One sentence: what it is and who it is for.</p>
+          <dl>
+            <dt>Problem</dt>
+            <dd>The problem it solves.</dd>
+            <dt>What I built</dt>
+            <dd>The main features, in plain words.</dd>
+            <dt>My role</dt>
+            <dd>What you personally did (for example: designed the database, built the API).</dd>
+          </dl>
+          <ul class="chips"><li>C#</li><li>.NET Core</li><li>SQL Server</li></ul>
+          <p class="proj-links">
+            <a class="btn" href="https://github.com/jeditdev/REPO-NAME" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn primary" href="https://YOUR-LIVE-DEMO" target="_blank" rel="noopener noreferrer">Live demo</a>
+          </p>
+        </article>
+      </div>
+      ===== COPY UNTIL HERE =====
     -->
   </div>
 </section>
 
-<section id="experience">
+<section class="alt" id="experience">
   <div class="wrap">
     <h2>Experience</h2>
 
@@ -142,10 +201,8 @@
         <li>Design, develop, and maintain multiple web applications and .NET Core APIs using C#, ASP.NET MVC, and VB.NET as part of a 2-3 member development team.</li>
         <li>Build data access layers and optimized SQL Server/MySQL queries using Entity Framework, LINQ, and stored procedures; develop SSRS reports for business users.</li>
         <li>Diagnose and resolve defects in report queries and API endpoints through systematic debugging, improving system stability on an ongoing project.</li>
-        <li>Develop responsive user interfaces with HTML, CSS, JavaScript, jQuery, and Bootstrap, integrated with backend APIs via AJAX.</li>
         <li>Document .NET Core APIs using Swagger and write technical guides and system documentation to support team onboarding and long-term maintainability.</li>
         <li>Provide ERP support for SAP Business One and MS Dynamics AX 2012, performing troubleshooting and root-cause analysis to resolve user-reported issues.</li>
-        <li>Manage source control and branching with Perforce (P4V); working knowledge of Git. Use Excel (Pivot Tables, VLOOKUP) for data analysis and reporting.</li>
       </ul>
     </article>
 
@@ -178,24 +235,47 @@
   </div>
 </section>
 
-<section class="alt" id="contact">
-  <div class="wrap cgrid">
-    <div>
-      <h2>Have a project or opportunity in mind? Let’s connect.</h2>
-      <div class="clinks">
-        <a href="mailto:johnerwin.adimaano@gmail.com">johnerwin.adimaano@gmail.com</a>
-        <a href="https://www.linkedin.com/in/jedimaano/" target="_blank" rel="noopener noreferrer">LinkedIn: jedimaano</a>
-        <a href="https://github.com/jeditdev" target="_blank" rel="noopener noreferrer">GitHub: jeditdev</a>
-      </div>
+<section id="contact">
+  <div class="wrap">
+    <h2>Have a project or opportunity in mind? Let’s connect.</h2>
+    <!-- AVAILABILITY: edit this sentence so it is always true, or delete the line. -->
+    <p class="availability">Open to full-time roles and freelance projects. Based in the Philippines (UTC+8).</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Full-time roles</h3>
+        <p class="muted">I’m looking for a full-time .NET developer role where I can build and maintain web applications, APIs and reports.</p>
+        <!-- OPTIONAL: add your preferred work setup here (on-site, hybrid or remote). -->
+      </article>
+      <article class="card">
+        <h3>Freelance projects</h3>
+        <p class="muted">I take on projects such as internal business tools, .NET Core APIs, SQL Server reports and fixes to existing systems.</p>
+      </article>
     </div>
-    <form id="form" novalidate>
-      <label>Name<input name="name" autocomplete="name" required><span class="err"></span></label>
-      <label>Email<input name="email" type="email" autocomplete="email" required><span class="err"></span></label>
-      <label>Subject<input name="subject" required><span class="err"></span></label>
-      <label>Message<textarea name="message" required></textarea><span class="err"></span></label>
-      <button class="btn primary submit" type="submit">Write email</button>
-      <p id="status" role="status"></p>
-    </form>
+
+    <p class="muted start-note">To start a project, send me what you need, your deadline and your rough budget.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:johnerwin.adimaano@gmail.com?subject=Hello%20John">johnerwin.adimaano@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/jedimaano/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn" href="https://github.com/jeditdev" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+    <h3 class="faq-title">Frequently asked questions</h3>
+    <!-- EDIT THESE ANSWERS so every one is true for you. -->
+    <div class="faq">
+      <details>
+        <summary>What do you build?</summary>
+        <p>Web applications, .NET Core APIs, SQL Server reports, and fixes to existing systems.</p>
+      </details>
+      <details>
+        <summary>How long does a small project take?</summary>
+        <p>It depends on the scope. Send me the details and I will give you an estimate.</p>
+      </details>
+      <details>
+        <summary>How do we communicate?</summary>
+        <p>By email to start, and on a call or chat if the project needs it.</p>
+      </details>
+    </div>
   </div>
 </section>
 </main>

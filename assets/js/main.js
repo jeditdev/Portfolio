@@ -8,12 +8,11 @@
    4. Opens and closes the mobile menu
    5. Highlights the nav link of the section you are viewing
    6. Fades cards in as you scroll (scroll reveal)
-   7. Validates the contact form and opens the visitor's email app
 
    Notes for editing:
    - Do not add inline <script> blocks to index.html; the Content Security
      Policy only allows scripts loaded from the assets/js folder.
-   - Change your resume link and email in config.js, not here.
+   - Change your resume link in config.js, not here.
    ========================================================================== */
 
 "use strict";
@@ -22,7 +21,7 @@
    1. SETTINGS AND SHORTCUTS
    -------------------------------------------------------------------------- */
 
-// SITE comes from config.js (it holds resumeUrl and email).
+// SITE comes from config.js (it holds resumeUrl).
 const SITE = window.SITE || {};
 
 // Shortcut: $("#menuBtn") finds the first element matching a CSS selector.
@@ -120,7 +119,7 @@ if ("IntersectionObserver" in window) {
 
 document.documentElement.classList.add("js");
 
-const revealItems = document.querySelectorAll(".card, .job, .stats li, .empty, .code-card");
+const revealItems = document.querySelectorAll(".card, .job, .stats li, .steps li, .faq details, .empty, .code-card");
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
@@ -138,60 +137,3 @@ if ("IntersectionObserver" in window) {
     revealObserver.observe(item);
   });
 }
-
-
-/* --------------------------------------------------------------------------
-   7. CONTACT FORM
-   There is no server. After validation, the visitor's own email app opens
-   with the message filled in. Nothing is sent until they press Send there,
-   and the status text says so honestly.
-   -------------------------------------------------------------------------- */
-
-const form = $("#form");
-const formStatus = $("#status");
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();                       // stop the page from reloading
-
-  const values = {};
-  let isValid = true;
-
-  // Check every field. Each field is followed by a <span class="err"> for its message.
-  form.querySelectorAll("input, textarea").forEach((field) => {
-    const value = field.value.trim();
-    let message = "";
-
-    if (!value) {
-      message = "This field is required.";
-    } else if (field.name === "email" && !emailPattern.test(value)) {
-      message = "Enter a valid email address.";
-    }
-
-    field.setAttribute("aria-invalid", message ? "true" : "false");   // red border via CSS
-    field.nextElementSibling.textContent = message;
-
-    if (message) isValid = false;
-    values[field.name] = value;
-  });
-
-  if (!isValid) {
-    formStatus.textContent = "Fix the highlighted fields and try again.";
-    return;
-  }
-
-  if (!SITE.email) {
-    formStatus.textContent = "The contact email is not set. Add it in assets/js/config.js.";
-    return;
-  }
-
-  // Build the email and hand it to the visitor's email app.
-  const body = values.message + "\n\nFrom: " + values.name + " (" + values.email + ")";
-  window.location.href =
-    "mailto:" + SITE.email +
-    "?subject=" + encodeURIComponent(values.subject) +
-    "&body=" + encodeURIComponent(body);
-
-  formStatus.textContent =
-    "Your email app should open with this message ready. Nothing is sent until you press send there.";
-});
